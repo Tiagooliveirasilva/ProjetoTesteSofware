@@ -96,5 +96,7 @@ public class SurveyServiceTest {
         assertEquals(newsurvey.getTitle(), MockSurvey.getTitle());
         assertEquals(newsurvey.getPrefix(), MockSurvey.getPrefix());
         assertEquals(newsurvey.getDescription(), MockSurvey.getDescription());
+        
+        
     }    
 }
