@@ -40,6 +40,9 @@ public class UserTestingProfiles {
         List<Role> roleList = roleRepository.findAll();
         assertNotNull(roleList);
         assertTrue(roleList.size() > 0);
+        
+        
+        
     }
 
 
