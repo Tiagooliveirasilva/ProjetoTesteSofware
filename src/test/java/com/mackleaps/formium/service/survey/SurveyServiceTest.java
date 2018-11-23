@@ -75,4 +75,26 @@ public class SurveyServiceTest {
         surveyService.deleteSurvey(NOT_EXISTING_SURVEY_ID);
     }
 
+    @Test
+    public void SalvarService(){
+                
+        Survey MockSurvey = new Survey();
+        MockSurvey.setPrefix("Prefix");
+        MockSurvey.setTitle("Title");
+        MockSurvey.setDescription("Description");
+               
+        
+        Survey newsurvey = new Survey();
+        newsurvey.setPrefix("Prefix");
+        newsurvey.setTitle("Title");
+        newsurvey.setDescription("Description");      
+        
+        when(surveyRepository.saveAndFlush(newsurvey)).thenReturn(newsurvey);
+         
+        surveyService.addSurvey(newsurvey); 
+        
+        assertEquals(newsurvey.getTitle(), MockSurvey.getTitle());
+        assertEquals(newsurvey.getPrefix(), MockSurvey.getPrefix());
+        assertEquals(newsurvey.getDescription(), MockSurvey.getDescription());
+    }    
 }
